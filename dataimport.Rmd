@@ -5,6 +5,8 @@ output: github_document
 
 ```{r setup}
 library(tidyverse)
+library(readxl)
+library(haven)
 ```
 
 ## Read in some data
@@ -47,6 +49,25 @@ litters_df = read_csv("./data_import_examples/FAS_litters.csv", skip = 10, col_n
 Skipping rows can be useful if descriptions got included or the first few rows are blank.
 Column names option can be useful when you do not have column names in the file. 
 NA option can be useful in defining what is categorized as NA in R from the original dataset.
+
+## Other file format - Excel
+
+Read in an excel file.
+
+```{r}
+mlb_df = read_excel("./data_import_examples/mlb11.xlsx")
+mlb_df
+```
+
+Can always use the function View(mlb_df) in the CONSOLE to view the entire data frame.
+
+## Other file format - SAS
+
+```{r}
+pulse_df = read_sas("./data_import_examples/public_pulse_data.sas7bdat")
+pulse_df
+```
+
 
 
 
