@@ -54,7 +54,7 @@ NA option can be useful in defining what is categorized as NA in R from the orig
 
 Read in an excel file.
 
-```{r}
+```{r_Excel_import}
 mlb_df = read_excel("./data_import_examples/mlb11.xlsx")
 mlb_df
 ```
@@ -63,11 +63,20 @@ Can always use the function View(mlb_df) in the CONSOLE to view the entire data 
 
 ## Other file format - SAS
 
-```{r}
+```{r_SAS_import}
 pulse_df = read_sas("./data_import_examples/public_pulse_data.sas7bdat")
 pulse_df
 ```
 
+## Comparison with base R
 
+what about `read.csv`...?
+
+```{r_read.csv}
+litters_base = read.csv("./data_import_examples/FAS_litters.csv")
+litters_readr = read_csv("./data_import_examples/FAS_litters.csv")
+litters_base
+litters_readr
+```
 
 
