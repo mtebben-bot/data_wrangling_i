@@ -70,12 +70,15 @@ Read in an excel file.
 ``` r_excel_import
 mlb_df = read_excel("./data_import_examples/mlb11.xlsx")
 mlb_df
+mlb_df = read_excel("./data_import_examples/mlb11.xlsx", range = "A1:F7")
 ```
 
 Can always use the function View(mlb\_df) in the CONSOLE to view the
-entire data frame.
+entire data frame. Use range to select cells to import.
 
 ## Other file format - SAS
+
+Read in a SAS file.
 
 ``` r_sas_import
 pulse_df = read_sas("./data_import_examples/public_pulse_data.sas7bdat")
@@ -91,4 +94,12 @@ litters_base = read.csv("./data_import_examples/FAS_litters.csv")
 litters_readr = read_csv("./data_import_examples/FAS_litters.csv")
 litters_base
 litters_readr
+```
+
+## Exporting data
+
+Export mlb sub-table
+
+``` r_write_csv
+write_csv(mlb_df, "./data_import_examples/mlb_subtable.csv")
 ```
