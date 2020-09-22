@@ -20,24 +20,40 @@ library(tidyverse)
 
 Read in the litters dataset.
 
-``` r
+``` {r_read)csv}
 litters_df = read_csv("./data_import_examples/FAS_litters.csv")
-```
-
-    ## Parsed with column specification:
-    ## cols(
-    ##   Group = col_character(),
-    ##   `Litter Number` = col_character(),
-    ##   `GD0 weight` = col_double(),
-    ##   `GD18 weight` = col_double(),
-    ##   `GD of Birth` = col_double(),
-    ##   `Pups born alive` = col_double(),
-    ##   `Pups dead @ birth` = col_double(),
-    ##   `Pups survive` = col_double()
-    ## )
-
-``` r
 litters_df = janitor::clean_names(litters_df)
 ```
 
 ## Take a look at the data
+
+Printing in the console
+
+``` r_print_df
+litters_df
+```
+
+``` r_head_df
+head(litters_df)
+```
+
+``` r_tail_df
+tail(litters_df)
+```
+
+``` r_skimr_skim_df
+skimr::skim(litters_df)
+```
+
+## Options to read csv files
+
+Check out `?read_csv` for more information\!
+
+``` r_read_csv_options
+litters_df = read_csv("./data_import_examples/FAS_litters.csv", skip = 10, col_names = FALSE, na = c("", "NA", 999))
+```
+
+Skipping rows can be useful if descriptions got included or the first
+few rows are blank. Column names option can be useful when you do not
+have column names in the file. NA option can be useful in defining what
+is categorized as NA in R from the original dataset.
