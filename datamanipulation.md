@@ -66,3 +66,11 @@ relocate(litters_df, litter_number)
 ```
 
 ## `filter`
+
+``` r_filter
+filter(litters_df, gd0_weight >= 22)
+filter(litters_df, !(gd_of_birth == 20))
+filter(litters_df, group %in% c("Con7", "Mod8"))
+```
+
+Logical operators on p8105 website to be used in filter.
