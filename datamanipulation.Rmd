@@ -51,21 +51,26 @@ rename(litters_df, GROUP = group)
 
 Select columns that start with...
 
-```{r}
+```{r_select_startswith}
 select(litters_df, starts_with("gd"))
 ```
 
 To look at one column first, but keep the rest, use everything()
 
-```{r}
+```{r_select_everything}
 select(litters_df, litter_number, everything())
 ```
 
 or...
-```{r}
+```{r_relocate}
 relocate(litters_df, litter_number)
 ```
 
+## `filter`
+
+```{r}
+
+```
 
 
 
