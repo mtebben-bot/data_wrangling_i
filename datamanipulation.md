@@ -87,3 +87,14 @@ mutate(
 ```
 
 str\_to\_lower gives you lowercase, replaced group with group
+
+## `arrange`
+
+Sometimes helpful to rearrange dataset in a more logical way
+
+``` r_arrange
+arrange(litters_df, pups_born_alive, gd0_weight)
+```
+
+Will arrange by first variable given, then by second variable given in
+the first variable order.
