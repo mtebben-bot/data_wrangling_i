@@ -74,3 +74,16 @@ filter(litters_df, group %in% c("Con7", "Mod8"))
 ```
 
 Logical operators on p8105 website to be used in filter.
+
+## `mutate`
+
+For calculations in dataset
+
+``` r_mutate
+mutate(
+  litters_df,
+  wt_gain = gd18_weight - gd0_weight,
+  group = str_to_lower(group))
+```
+
+str\_to\_lower gives you lowercase, replaced group with group
