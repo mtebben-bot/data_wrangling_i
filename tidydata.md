@@ -64,3 +64,37 @@ analysis_result %>%
     values_from = "mean"
   )
 ```
+
+## Binding rows
+
+Using LOTR data
+
+First step: import each table
+
+``` r_load_lotr_data
+fellow = 
+  readxl::read_excel("./data_import_examples/LotR_Words.xlsx", range = "B3:D6") %>% 
+  mutate(movie = "fellowship_of_the_ring")
+
+two_towers = 
+  readxl::read_excel("./data_import_examples/LotR_Words.xlsx", range = "F3:H6") %>% 
+  mutate(movie = "two_towers")
+
+return = 
+  readxl::read_excel("./data_import_examples/LotR_Words.xlsx", range = "J3:L6") %>% 
+  mutate(movie = "return_of_the_king")
+```
+
+Bind all of the rows together
+
+``` r_bind_rows
+lotr_tidy = 
+  bind_rows(fellow, two_towers, return) %>% 
+  janitor::clean_names() %>% 
+  relocate(movie) %>% 
+  pivot_longer(
+    female:male,
+    names_to = "gender",
+    values_to = "words"
+  )
+```
