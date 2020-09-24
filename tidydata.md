@@ -101,7 +101,7 @@ lotr_tidy =
 
 ## Joining data sets
 
-Importing FAS datasets.
+#### Importing FAS datasets.
 
 ``` r_importing_fas_datasets
 pups_df = 
@@ -118,3 +118,12 @@ litters_df =
 
 Litter number variable the same across both, will unite both datasets
 together.
+
+#### Time to join\!
+
+``` r_joining
+fas_df = 
+  left_join(pups_df, litters_df, by = "litter_number") %>% 
+  arrange(litter_number) %>% 
+  relocate(litter_number, dose, day_of_tx)
+```
